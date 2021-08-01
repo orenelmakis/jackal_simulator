@@ -3,7 +3,7 @@
   <arg name="y" default="0" />
   <arg name="z" default="1" />
   <arg name="yaw" default="0" />
-  <arg name="joystick" default="true" />
+  <arg name="joystick" default="false" />
 
   <!-- Configuration of Jackal which you would like to simulate.
        See jackal_description for details. -->
