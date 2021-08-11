@@ -4,6 +4,7 @@
   <arg name="z" default="1" />
   <arg name="yaw" default="0" />
   <arg name="joystick" default="false" />
+  <arg name="ns" default="jackal0" />
 
   <!-- Configuration of Jackal which you would like to simulate.
        See jackal_description for details. -->
@@ -20,5 +21,5 @@
 
   <!-- Spawn Jackal -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
-	      args="-urdf -model jackal -param robot_description -x $(arg x) -y $(arg y) -z $(arg z) -R 0 -P 0 -Y $(arg yaw)" />
+	      args="-urdf -model jackal -param /$(arg ns)/robot_description -x $(arg x) -y $(arg y) -z $(arg z) -R 0 -P 0 -Y $(arg yaw)" />
 </launch>
