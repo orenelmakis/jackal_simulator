@@ -11,6 +11,8 @@
   <arg name="default_config" value="base" unless="$(arg front_laser)" />
   <!-- end of hack -->
 
+  <env name="GAZEBO_MODEL_PATH" value="${GAZEBO_MODEL_PATH}:$(find jackal_gazebo)/Media/models"/>
+
   <!-- Configuration of Jackal which you would like to simulate.
        See jackal_description for details. -->
   <arg name="config" default="$(arg default_config)" />
