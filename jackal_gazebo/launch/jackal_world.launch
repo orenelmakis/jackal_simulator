@@ -3,6 +3,7 @@
   <arg name="gui" default="true" />
   <arg name="headless" default="false" />
   <arg name="world_name" default="$(find jackal_gazebo)/worlds/jackal_race.world" />
+  <arg name="ns" default="jackal0" />
 
   <!-- Short-term hack to support the original front_laser:=true argument for spawning
        the simulator. This will be removed in favour of using the config:=x arg instead. -->
@@ -28,7 +29,7 @@
     <arg name="headless" value="$(arg headless)" />
     <arg name="world_name" value="$(arg world_name)" />
   </include>
-
+  <group ns="$(arg ns)">
   <!-- Spawn Jackal -->
   <include file="$(find jackal_gazebo)/launch/spawn_jackal.launch">
     <arg name="x" value="0" />
@@ -37,5 +38,7 @@
     <arg name="yaw" value="0" />
     <arg name="config" value="$(arg config)" />
     <arg name="joystick" value="$(arg joystick)" />
+    <arg name="ns" value="$(arg ns)" />
   </include>
+</group>
 </launch>
